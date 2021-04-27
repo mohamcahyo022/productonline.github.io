@@ -1,2 +1,1 @@
-# Product-Online
-Product Online
+# Javascript-Product-Counter

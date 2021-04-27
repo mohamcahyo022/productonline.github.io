@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Product Online</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="responsive.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <a>Product Online</a>
+        </div>
+       <nav>
+          <a href="#beranda">Beranda</a>
+          <a href="#buat">Buat Pesanan</a>
+          <a>Contact Us</a>
+       </nav>
+      </div>
+    </header>
+    <div id="beranda"class="top-wrapper">
+      <div class="container">
+        <h1>SELAMAT DATANG.</h1>
+        <h1>DI PROJECT PRODUCT ONLINE.</h1>
+        <p>Project Ini Merupakan Sebuah Project Sederhana.</p>
+        <p>Yang menggunakan Bahasa Pemrograman HTML,CSS Dan JAVASCRIPT </p>
+        <div class="btn-wrapper">
+          <a href="#buat" class="btn buat">Buat Sekarang!!!</a>
+        </div>
+      </div>
+    </div>
+    <main id="buat">
+   <div class="counter">
+         <h1> Product Charger</h1>;
+
+         <div class="counter-inner">
+               <div class="total-product">
+                  <img src="charger.jpg" alt="">
+                  <div>
+                       <h5>Price: 78 Ribu</h5>
+                       <h5>Jumlah: <span id="quantity">0</span></h5>
+                      <h5>Total Harga: <span id="total-price">0</span> Rupiah</h5>
+                  </div>
+               </div>
+               
+               <!-- <button class="btn" id="minus">-</button> -->
+               <button class="btn" onclick="productCount(false)">-</button>
+               <input type="number" value="0" id="input">
+               <!-- <button class="btn" id="plus">+</button> -->
+               <button class="btn" onclick="productCount(true)">+</button>
+               <br>
+
+               <button class="btn btn-buy" id="buy">Beli</button>
+         </div>
+      </div>
+ 
+      <script>
+     
+
+         function productCount(product){
+            const inputBtn = document.getElementById('input').value;
+            const newInputBtn = parseInt(inputBtn);
+            let total = newInputBtn;
+            if(product == true){
+             total = newInputBtn + 1;
+            }
+            if(product == false && newInputBtn > 0){
+             total = newInputBtn - 1;
+            }
+            document.getElementById('quantity').innerText = document.getElementById('input').value = total;
+            
+         }
+ 
+         const buyBtn = document.getElementById('buy');
+         buyBtn.addEventListener('click', function(){
+            const inputBtn =   document.getElementById('quantity').innerText =  document.getElementById('input').value;
+            const newInputBtn = parseInt(inputBtn);
+ 
+            const total = newInputBtn * 78;
+            document.getElementById('total-price').innerText = total;
+         })
+      </script>
+      <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    </div>
+      </div>
+    </div>
+  </aside>
+  <br>
+    <footer>
+      <div class="container">
+        <p>Copyright &copy; 2021 Cahyobagus</p>
+      </div>
+    </footer>
+  </body>
+</html>
